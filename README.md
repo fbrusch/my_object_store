@@ -7,6 +7,6 @@ Very simple object store with a REST interface.
 
 It should implement the following _REST_ interface:
 
-    * PUT /object: publish object
-    * GET /object: get object
+    * PUT /store/object_key: publish object
+    * GET /store/object_key: get object
 
