@@ -27,6 +27,11 @@ describe "store and retrieve", ->
             json: true}, (err, res, body) ->
                 assert.deepEqual test_obj, body
                 done()
+    it "/generateId should respond with something like an ID", (done) ->
+        request.get "http://#{store_address}/generateId", (err, res, body) ->
+            assert.ok(body.length > 0)
+            done()
+    
 
     #it "should be that if I store an obj, and then retrieve it, 
        #it should be the same", (done) -> 
