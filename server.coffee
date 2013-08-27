@@ -17,7 +17,7 @@ storeEndPoint = "store"
 app.get "/", (req, res) ->
     res.send "alive and kicking"
 
-app.get "/newObject", (req, res) ->
+app.get "/generateId", (req, res) ->
     res.send hat()
 
 
