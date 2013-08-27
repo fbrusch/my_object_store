@@ -1,4 +1,5 @@
 express = require "express"
+hat = require "hat"
 app = express()
 port = 12012
 
@@ -15,6 +16,10 @@ storeEndPoint = "store"
 
 app.get "/", (req, res) ->
     res.send "alive and kicking"
+
+app.get "/newObject", (req, res) ->
+    res.send hat()
+
 
 app.put "/#{storeEndPoint}/:key", (req, res) ->
     store.update 
