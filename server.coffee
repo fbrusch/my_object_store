@@ -31,5 +31,7 @@ app.put "/#{storeEndPoint}/:key", (req, res) ->
     
 app.get "/#{storeEndPoint}/:key", (req, res) ->
     store.findOne {key: req.params.key}, {}, (err, result) ->
-        res.send result.obj
+        if result == null then res.send 404
+        else if err then res.send 500
+        else res.send result.obj
 app.listen 12012
